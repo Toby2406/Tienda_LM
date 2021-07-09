@@ -12,7 +12,7 @@ public function RealaizarConexion(){
    {
      $conexion = PDO("pgsql:host=$servidor;port=$port;dbname=$bd", $usuario, $clave);
      $conexion->setAtribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-   }catch (Exception e)
+   }catch (Exception $e)
    {
      echo "ERROR AL CONECTAR", $e->getMessage();
    }
