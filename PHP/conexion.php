@@ -5,13 +5,17 @@
   private  $usuario = "ocnnyoxnneovhs";
   private  $clave = "de6e47d7fde3f613c12e0897b9f411ffba239781299d7a11aa38cb203a54f8e9";
   private  $bd = "dc7j7k6ldeem3s";
+  private $port = "5432";
   //Realizamos la coneion
 public function RealaizarConexion(){
-    $conexion = mysqli_connect($this->servidor,$this->usuario,$this->clave,$this->bd);
-    if (!$conexion) {
-      echo "<h4>Error en la conexion</h4>";
-    }
-    return $conexion;
+   try
+   {
+     $conexion = PDO("pgsql:host=$servidor;port=$port;dbname=$bd", $usuario, $clave);
+     $conexion->setAtribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   }catch (Exception e)
+   {
+     echo "ERROR AL CONECTAR", $e->getMessage();
+   }
 }
 }
 ?>
