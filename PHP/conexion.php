@@ -5,7 +5,7 @@
   private  $usuario = "ocnnyoxnneovhs";
   private  $clave = "de6e47d7fde3f613c12e0897b9f411ffba239781299d7a11aa38cb203a54f8e9";
   private  $bd = "dc7j7k6ldeem3s";
-  private $port = 5432;
+  private $port = "5432";
   //Realizamos la coneion
 public function RealaizarConexion(){
   try {
