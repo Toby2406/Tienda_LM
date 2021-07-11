@@ -15,7 +15,7 @@ public function RealaizarConexion(){
     }
     $conexion = null;
 } catch (PDOException $e) {
-    print "¡Error!: " . $e->getMessage() . "<br/>";
+    echo "¡Error!: " . $e->getMessage() . "<br/>";
     die();
 }
 }
