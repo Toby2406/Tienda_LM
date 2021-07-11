@@ -9,7 +9,7 @@
   //Realizamos la coneion
 public function RealaizarConexion(){
   try {
-    $conexion = new PDO('mysql:host=$servidor;dbname=$bd', $usuario, $clave);
+    $conexion = new PDO('pgsql:host=$servidor;port=$port;dbname=$bd', $usuario, $clave);
     foreach($conexion->query('SELECT * from FOO') as $fila) {
         print_r($fila);
     }
