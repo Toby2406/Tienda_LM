@@ -8,14 +8,16 @@
   private $port = "5432";
   //Realizamos la coneion
 public function RealaizarConexion(){
-   try
-   {
-     $conexion = PDO("pgsql:host=$servidor;port=$port;dbname=$bd", $usuario, $clave);
-     $conexion->setAtribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-   }catch (Exception $e)
-   {
-     echo "ERROR AL CONECTAR", $e->getMessage();
-   }
+  try {
+    $conexion = new PDO('mysql:host=$servidor;dbname=$bd', $usuario, $clave);
+    foreach($conexion->query('SELECT * from FOO') as $fila) {
+        print_r($fila);
+    }
+    $conexion = null;
+} catch (PDOException $e) {
+    print "¡Error!: " . $e->getMessage() . "<br/>";
+    die();
+}
 }
 }
 ?>
