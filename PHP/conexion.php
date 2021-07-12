@@ -9,7 +9,7 @@
   //Realizamos la coneion
 public function RealaizarConexion()
 {
-    $conexion = pg_connect("host='$this->servidor' port='$this->port' dbname='$this->bd' user='$this->usuario' password='$this->clave'");
+    $conexion = pg_connect("host=$this->servidor port=$this->port dbname=$this->bd user=$this->usuario password=$this->clave");
    echo "$this->servidor $this->usuario $this->clave $this->bd $this->port"; 
    if (!$conexion) 
     {
