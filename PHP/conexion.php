@@ -8,13 +8,13 @@
   private $port = '5432';
   //Realizamos la coneion
 public function RealaizarConexion()
- {
-    $conexion = pg_connect("host='ec2-52-202-152-4.compute-1.amazonaws.com' port=5432 dbname='dc7j7k6ldeem3s' user='ocnnyoxnneovhs' password='de6e47d7fde3f613c12e0897b9f411ffba239781299d7a11aa38cb203a54f8e9'");
-    if(!$conexion)
+{
+    $conexion = pg_connect("host= $this->servidor port=$this->port dbname=$this->bd user=$this->usuario password=$this->clave");
+    if (!$conexion) 
     {
-     echo "error en la conexion";
-     die();
-  }
+      echo "<h4>Error en la conexion</h4>";
+    }
+    return $conexion;
  }
 }
 ?>
