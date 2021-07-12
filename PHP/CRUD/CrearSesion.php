@@ -54,12 +54,12 @@
           $conexion = $conec->RealaizarConexion();
           //Obtenemos datos de tabla
           $consular_DatosTabla = "SELECT * FROM cliente";
-          $ejecutar = mysqli_query($conexion,$consular_DatosTabla);
+          $ejecutar = pg_query($conexion,$consular_DatosTabla);
           //arrays
           $arrya_correo_existentes = array();
           $i=0;
           //Realizar la obtencion de datos
-          while ($datos = mysqli_fetch_array($ejecutar))
+          while ($datos = pg_fetch_array($ejecutar))
           {
             $i++;
             $arrya_correo_existentes[$i] = $datos['Correo'];
@@ -167,7 +167,7 @@
           $id_provincia= "";
           $consulta = "SELECT id_provincia FROM localidad WHERE codigopostal = $localidad";
           //Realizamos una consulta
-          $ejecutar = mysqli_query( $R_conexion, $consulta);
+          $ejecutar = pg_query( $R_conexion, $consulta);
           while ($m= mysqli_fetch_array($ejecutar))
           {
             $id_provincia = $m[0];
@@ -176,8 +176,8 @@
           $provincia = "";
           $consulta_prov = "SELECT nombre FROM provincia WHERE codigo = '$id_provincia'";
           //Realizamos una consulta
-          $ejecutar_prov = mysqli_query( $R_conexion, $consulta_prov);
-          while ($m= mysqli_fetch_array($ejecutar_prov))
+          $ejecutar_prov = pg_query( $R_conexion, $consulta_prov);
+          while ($m= pg_fetch_array($ejecutar_prov))
           {
             $provincia = $m[0];
           }
@@ -185,7 +185,7 @@
         $contra_cifrada = hash('sha512',$contra);
         //Insertar paciente
         $consultaRegistrar = "INSERT INTO cliente VALUES ('$nombre', '$apellido', '$correo', '$contra_cifrada', '$localidad', '$provincia', '$telefono')";
-        $ejecutarRegistro= mysqli_query( $R_conexion, $consultaRegistrar);
+        $ejecutarRegistro= pg_query( $R_conexion, $consultaRegistrar);
         //Verificar
         //Si se enviaron correctamente las consultas
         if($ejecutarRegistro)
