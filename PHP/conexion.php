@@ -9,11 +9,7 @@
   //Realizamos la coneion
 public function RealaizarConexion(){
   try {
-    $conexion = new PDO_PGSQL('pgsql:host=$servidor;port=$port;dbname=$bd;user=$usuario;password=$clave');
-    foreach($conexion->query('SELECT * from FOO') as $fila) {
-        print_r($fila);
-    }
-    $conexion = null;
+    $conexion = pg_connect("pgsql:host=$servidor;port=$port;dbname=$bd;user=$usuario;password=$clave");
 } catch (PDOException $e) {
     echo "¡Error!: " . $e->getMessage() . "<br/>";
     die();
