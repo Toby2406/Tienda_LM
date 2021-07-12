@@ -11,7 +11,7 @@
 public function RealaizarConexion()
 {
     $conexion = pg_connect($this->cadena); 
-   echo "$this->cadena";
+   echo "adasda";
    if (!$conexion) 
     {
       echo "Error en la conexion";
