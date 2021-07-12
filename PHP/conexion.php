@@ -9,7 +9,8 @@
   //Realizamos la coneion
 public function RealaizarConexion(){
   try {
-    $conexion = pg_connect("pgsql:host=$servidor;port=$port;dbname=$bd;user=$usuario;password=$clave");
+    $conexion = pg_connect("host=$servidor;port=$port;dbname=$bd;user=$usuario;password=$clave");
+    echo "conexion exitosa";
 } catch (PDOException $e) {
     echo "¡Error!: " . $e->getMessage() . "<br/>";
     die();
