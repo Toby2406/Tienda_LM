@@ -15,6 +15,7 @@ public function RealaizarConexion()
    if (!$conexion) 
     {
       echo "Error en la conexion";
+      die();
     }
     return $conexion;
  }
