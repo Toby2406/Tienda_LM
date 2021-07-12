@@ -7,14 +7,14 @@
   private  $bd = "dc7j7k6ldeem3s";
   private $port = "5432";
   //Realizamos la coneion
-public function RealaizarConexion(){
-  try {
+public function RealaizarConexion()
+ {
     $conexion = pg_connect("host=$servidor;port=$port;dbname=$bd;user=$usuario;password=$clave");
-    echo "conexion exitosa";
-} catch (PDOException $e) {
-    echo "¡Error!: " . $e->getMessage() . "<br/>";
-    die();
-}
-}
+    if(!$conexion)
+    {
+     echo "error en la conexion";
+     die();
+  }
+ }
 }
 ?>
