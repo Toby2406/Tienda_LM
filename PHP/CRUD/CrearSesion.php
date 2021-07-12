@@ -168,7 +168,7 @@
           $consulta = "SELECT id_provincia FROM localidad WHERE codigopostal = $localidad";
           //Realizamos una consulta
           $ejecutar = pg_query( $R_conexion, $consulta);
-          while ($m= mysqli_fetch_array($ejecutar))
+          while ($m= pg_fetch_array($ejecutar))
           {
             $id_provincia = $m[0];
           }
