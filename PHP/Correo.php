@@ -20,8 +20,8 @@ class Correo
       require_once("../PHP/conexion.php");
       $conec = new conectar;
       $conexion = $conec->RealaizarConexion();
-      $datos_usuario = mysqli_query($conexion, "SELECT Nombre, Apellido, Telefono FROM cliente WHERE Correo = '$email'");
-      while ($m = mysqli_fetch_array($datos_usuario))
+      $datos_usuario = pg_query($conexion, "SELECT Nombre, Apellido, Telefono FROM cliente WHERE Correo = '$email'");
+      while ($m = pg_fetch_array($datos_usuario))
       {
         //ALMACENAMOS LOS DATOS
         $nombre = $m[0].' '.$m[1];
