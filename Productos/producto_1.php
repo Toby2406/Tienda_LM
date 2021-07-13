@@ -119,8 +119,8 @@
               require_once("../PHP/conexion.php");
               $conec = new conectar;
               $conexion = $conec->RealaizarConexion();
-              $datos_producto = mysqli_query($conexion, "SELECT Nombre_producto,Precio,Alto,Largo,Ancho,Color FROM producto WHERE ID_producto = 0000");
-              while ($m = mysqli_fetch_array($datos_producto))
+              $datos_producto = pg_query($conexion, "SELECT Nombre_producto,Precio,Alto,Largo,Ancho,Color FROM producto WHERE ID_producto = 0000");
+              while ($m = pg_fetch_array($datos_producto))
               {
                 $_SESSION['Nombre_producto'] = $m[0];
                 $_SESSION['Precio'] = $m[1];
