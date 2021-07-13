@@ -16,10 +16,6 @@ public function RealaizarConexion()
       echo "Error en la conexion";
       die();
     }
-    else
-    {
-     echo "funciona";
-    }
     return $conexion;
  }
 }
