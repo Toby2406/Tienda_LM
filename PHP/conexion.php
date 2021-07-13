@@ -6,12 +6,12 @@
   private  $clave = 'de6e47d7fde3f613c12e0897b9f411ffba239781299d7a11aa38cb203a54f8e9';
   private  $bd = 'dc7j7k6ldeem3s';
   private $port = '5432';
-  private $cadena = "host='$servidor' dbname='$bd'  user='$usuario' password='$clave'";
+  
   //Realizamos la coneion
 public function RealaizarConexion()
 {
  echo "antes de conexion";
-   $conexion = pg_connect($this->cadena); 
+   $conexion = pg_connect("host=$this->servidor dbname=$this->bd  user=$this->usuario password=$this->clave"); 
   echo "despues de conectar";
    if (!$conexion) 
     {
