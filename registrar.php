@@ -47,7 +47,7 @@
     </div>
     <?php
       session_start();
-      error_reporting(0);//DESACTIVAR ERRORES
+      //error_reporting(0);DESACTIVAR ERRORES
       
       require_once("PHP/CRUD/CrearSesion.php");
       $crear = new CrearSesion;
