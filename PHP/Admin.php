@@ -13,7 +13,7 @@ class Select
       $consulta = 'SELECT * FROM localidad order by codigopostal asc';
       $ejecucion = pg_query($R_conexion, $consulta) or die (pg_result_error($R_conexion));
       foreach ($ejecucion as $valores) {
-        echo "<option value = '$valores[codigopostal]'>",$valores[codigopostal],"</option>";
+        echo "<option value = '$valores[codigopostal]'>".$valores[codigopostal]."</option>";
       }
     }
 
