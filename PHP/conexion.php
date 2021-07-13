@@ -10,9 +10,7 @@
   //Realizamos la coneion
 public function RealaizarConexion()
 {
- echo "antes de conexion";
    $conexion = pg_connect("host=$this->servidor dbname=$this->bd  user=$this->usuario password=$this->clave"); 
-  echo "despues de conectar";
    if (!$conexion) 
     {
       echo "Error en la conexion";
