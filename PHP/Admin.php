@@ -10,7 +10,7 @@ class Select
        $conec = new conectar;
       //llamada a el metodo de realizar $conexion
       $R_conexion = $conec->RealaizarConexion();
-      $consulta = "SELECT * FROM localidad order by codigopostal asc";
+      $consulta = 'SELECT * FROM localidad order by codigopostal asc';
       $ejecucion = pg_query($R_conexion, $consulta) or die (pg_error($R_conexion));
       foreach ($ejecucion as $valores) {
         echo "<option value = '$valores[codigopostal]'>",$valores['codigopostal'],"</option>";
