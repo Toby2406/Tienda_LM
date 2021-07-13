@@ -12,6 +12,10 @@ class Select
       $R_conexion = $conec->RealaizarConexion();
       $consulta = 'SELECT * FROM localidad order by codigopostal asc';
       $ejecucion = pg_query($R_conexion, $consulta) or die (pg_result_error($R_conexion));
+      if($ejecucion)
+      {
+        echo "funciona";
+      }
       foreach ($ejecucion as $valores) {
         echo "<option value = '$valores[codigopostal]'>",$valores['codigopostal'],"</option>";
       }
