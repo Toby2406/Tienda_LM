@@ -129,7 +129,7 @@
                 $_SESSION['Ancho'] = $m[4];
                 $_SESSION['Color'] = $m[5];
               }
-            echo "Datos de sesion: ".$_SESSION['Nombre_producto']." Precio: ".$_SESSION['Precio'];
+            echo "Datos de sesion: ";
              ?>
             <h3 id="text_proc">Descripción</h3>
             <p id="desc_proc">
