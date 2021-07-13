@@ -10,8 +10,9 @@
   //Realizamos la coneion
 public function RealaizarConexion()
 {
+ echo "antes de conexion";
    $conexion = pg_connect($this->cadena); 
-  
+  echo "despues de conectar";
    if (!$conexion) 
     {
       echo "Error en la conexion";
