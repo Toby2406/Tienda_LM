@@ -1,4 +1,5 @@
 {
+  "name": "toby2406/tienda_lm",
   "require": {
       "ext-memcached": "*"
   }
